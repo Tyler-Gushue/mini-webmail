@@ -4,22 +4,31 @@
 
     require_once('../includes/dbFunctions.php');
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $hashedPassword = getPassword($email);
+        $json = file_get_contents('php://input');
 
-    if (password_verify($password, $hashedPassword)) {
+        $data = json_decode($json, true);
 
-        $_SESSION['email'] = $email;
-
-        header("Location: ../public/inbox.php");
-
-    }
-    else {
-
-        $_SESSION['error'] = "Invalid email or password.";
-        header("Location: ../public/login.php");
+        $email = $data['email'];
+        $password = $data['password'];
+    
+        $hashedPassword = getPassword($email);
+    
+        if (password_verify($password, $hashedPassword)) {
+    
+            $_SESSION['email'] = $email;
+    
+            echo json_encode(['success' => true]);
+            exit();
+    
+        }
+        else {
+    
+            echo json_encode(['success' => false]);
+            exit();
+    
+        }
 
     }
 

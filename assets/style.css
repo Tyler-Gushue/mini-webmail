@@ -1,0 +1,296 @@
+:root {
+
+    --darkGrey: #262626;
+    --lightGrey: #666666;
+    --background: #f2f2f2;
+    --border: #bfbfbf;
+    --white: #ffffff;
+
+}
+
+.body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    min-height: 80vh;
+
+}
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    min-height: 100vh;
+
+}
+
+.loginArea {
+
+    padding: 15px 45px;
+    background-color: var(--white);
+    width: 400px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--border);
+    border-width: thin;
+
+}
+
+h1 {
+
+    text-align: center;
+
+}
+
+.input {
+
+    margin-bottom: 10px;
+    padding: 15px 2px;
+    font-size: 18px;
+    border-style: solid;
+    border-color: var(--lightGrey);
+    border-width: thin;
+    border-radius: 5px;
+    width: 100%
+
+}
+
+.button {
+
+    background-color: var(--lightGrey);
+    margin: 10px 0px;
+    color: var(--white);
+    border-style: solid;
+    border-color: var(--lightGrey);
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100%;
+
+}
+
+.nav1 {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    flex: 0 0 20%;
+    margin: 30px 50px;
+    background-color: var(--darkGrey);
+    color: var(--white);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--border);
+    border-width: thin;
+    padding: 15px 10px;
+
+}
+
+.exemail {
+
+    font-size: 30px;
+    margin: 0px 2px;
+
+}
+
+.navButton {
+
+    background-color: var(--lightGrey);
+    color: var(--white);
+    margin: 2px 10px;
+    border-style: solid;
+    border-color: var(--white);
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+
+.navButton:hover {
+    background-color: var(--white); 
+    color: var(--darkGrey);            
+    border-color: var(--lightGrey);     
+}
+
+#logout {
+
+    margin-left: auto;
+
+}
+
+.details {
+
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+    text-align: center;
+    flex: 0 0 15%;
+    margin: 0px 50px;
+    color: var(--darkGrey);
+
+}
+
+#emails{
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+    flex: 0 0 65%;
+    margin: 30px 50px;
+    color: var(--darkGrey);
+    padding: 15px 10px;
+
+}
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: thin;
+    table-layout: fixed;
+    border-radius: 10px;
+
+}
+
+tr {
+
+    border-style: solid;
+    background-color: var(--white);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-width: thin;
+
+}
+
+tr:nth-child(even) {
+
+    background-color: #e6e6e6;
+
+}
+
+th {
+
+    background-color: var(--darkGrey);
+    color: var(--white);
+
+}
+
+th, td{
+
+    text-align: left;
+    padding: 10px 20px;
+    word-wrap: break-word;
+
+}
+
+h4 {
+
+    margin-left: 15px;
+    border-style: outset;
+    padding: 20px;
+
+}
+
+.sendEmail {
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 15px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var(--white);
+    width: 50%;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--border);
+    border-width: thin;
+
+}
+
+.emailBox {
+
+    padding: 5px 10px;
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--border);
+    border-width: thin;
+    resize: none;
+
+}
+
+label {
+
+    font-size: 20px;
+
+}
+
+footer {
+
+    background-color: var(--darkGrey);
+
+}
+
+
+
+@media (max-width: 500px) {
+
+    .loginArea {
+
+        padding: 15px 45px;
+        width: 150px;
+        border-radius: 10px;
+        font-size: 12px;
+    
+    }
+    
+    .input {
+    
+        margin-bottom: 10px;
+        padding: 10px 2px;
+        font-size: 12px;
+        border-style: solid;
+        border-color: lightgray;
+        border-width: thin;
+        border-radius: 5px;
+        width: 100%
+    
+    }
+    
+    .button {
+    
+        margin: 10px 0px;
+        padding: 5px 10px;
+        font-size: 12px;
+    
+    }
+
+    .nav {
+
+        flex-direction: column;
+    
+    }
+
+    #logout {
+
+        margin-left: 0;
+    
+    }
+
+}

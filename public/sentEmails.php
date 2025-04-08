@@ -9,41 +9,31 @@
 
     }
 
-?>
+    require_once("../templates/header.php");
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <form method="GET" action="../api/logout.php">
-        <input type="submit" value="Logout">
-    </form>
-
-    <form method="GET" action="inbox.php">
-        <input type="submit" value="Inbox">
-    </form>
-
-    <?php 
-    
-        if (isset($_COOKIE['lastLogin'])) {
-
-            echo "<h4>Welcome Back!  Last Login : " . $_COOKIE['lastLogin'] . "</h4>";
-
-        }
-        else {
-
-            echo "<h4>Welcome to your inbox!</h4>";
-
-        }
-    
     ?>
 
-    <div id="inbox">
+<main>
+    <div class="details">
+
+        <?php 
+
+            if (isset($_COOKIE['lastLogin'])) {
+
+                echo "<h4>Welcome Back!  Last Login : " . $_COOKIE['lastLogin'] . "</h4>";
+
+            }
+            else {
+
+                echo "<h4>Welcome to your inbox!</h4>";
+
+            }
+
+        ?>
+
+    </div>
+
+    <div id="emails">
 
     </div>
 
@@ -80,7 +70,7 @@
 
                 emailTable += "</table>"
 
-                document.getElementById("inbox").innerHTML = emailTable;
+                document.getElementById("emails").innerHTML = emailTable;
 
             })
 
@@ -91,6 +81,7 @@
         setInterval(fetchEmails, 60000);
 
     </script>
-
-</body>
-</html>
+</main>
+<?php 
+    require_once("../templates/footer.php")
+?>

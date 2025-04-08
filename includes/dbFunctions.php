@@ -75,4 +75,26 @@
 
     }
 
+    function sendEmail ($senderEmail, $recipientEmail, $emailSubject, $emailContent) {
+
+        global $mysql;
+
+        try {
+
+            $stmt = $mysql->prepare("INSERT INTO emails (senderEmail, recipientEmail, emailSubject, emailContent) VALUES ( ?, ?, ?, ? )");
+            $stmt->bind_param("ssss", $senderEmail, $recipientEmail, $emailSubject, $emailContent);
+            $stmt->execute();
+
+            return 1;
+
+        }
+        catch (Exception $e) {
+
+            error_log("error sending email: " . $e->getMessage());
+            return 0;
+
+        }
+
+    }
+
 ?>
